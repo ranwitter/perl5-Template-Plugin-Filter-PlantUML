@@ -4,9 +4,16 @@ use 5.006;
 use strict;
 use warnings;
 
+require Template::Plugin::Filter;
+use base qw(Template::Plugin::Filter);
+use vars qw($VERSION $DYNAMIC $FILTER_NAME);
+
+use Lingua::PlantUML::Encode qw(encode_p);
+use WWW::PlantUML;
+
 =head1 NAME
 
-Template::Plugin::Filter::PlantUML - The great new Template::Plugin::Filter::PlantUML!
+Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encoding and processing PlantUML Diagrams using any PlantUML Server.
 
 =head1 VERSION
 
@@ -14,39 +21,55 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
-
+our $VERSION     = 0.01;
+our $DYNAMIC     = 1;
+our $FILTER_NAME = 'plantuml';
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+[% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' %]
 
-Perhaps a little code snippet.
+[% link = FILTER plantuml %]
+  Bob -> Alice : hello
+[% END %]
 
-    use Template::Plugin::Filter::PlantUML;
+<img src="[% link %]" alt="[% link %]" />
 
-    my $foo = Template::Plugin::Filter::PlantUML->new();
-    ...
+=head1 DESCRIPTION
 
-=head1 EXPORT
+This is a trivial Template::Toolkit plugin filter to allow any template writer to embed PlantUML Diagram Syntax in Templates and have them encoded and processed via any PlantUML Server in any supported formats.
 
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
+It uses WWW:PlantUML remote client under the hood.
 
 =head1 SUBROUTINES/METHODS
 
-=head2 function1
+=head2 init
+
+gets called by new
 
 =cut
 
-sub function1 {
+sub init {
+    my $self = shift;
+    $self->install_filter($FILTER_NAME);
+    return $self;
 }
 
-=head2 function2
+
+=head2 filter
+
+filter subroutine
 
 =cut
 
-sub function2 {
+sub filter {
+    my($self, $code, $args, $conf) = @_;
+
+    $args = $self->merge_args($args); 
+    $conf = $self->merge_config($conf);
+
+    my $puml = WWW::PlantUML->new(@$args[0]);
+    return $puml->fetch_url($code, @$args[1] || 'png');
 }
 
 =head1 AUTHOR
