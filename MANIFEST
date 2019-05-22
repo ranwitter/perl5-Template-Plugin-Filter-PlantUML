@@ -7,6 +7,7 @@ MANIFEST.bak
 MYMETA.json
 MYMETA.yml
 README
+README.pod
 t/00-load.t
 t/01-filter.t
 t/manifest.t
