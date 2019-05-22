@@ -25,15 +25,24 @@ our $VERSION     = 0.01;
 our $DYNAMIC     = 1;
 our $FILTER_NAME = 'plantuml';
 
+
 =head1 SYNOPSIS
 
-[% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' %]
+To use this plugin, you have to make sure that the Template Toolkit knows about its namespace.
 
-[% link = FILTER plantuml %]
+my $tt2 = Template->new({
+    PLUGIN_BASE => 'Template::Plugin::Filter::PlantUML',
+});
+
+Then you b<USE> your plugin like below.
+
+[% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' -%]
+
+[% url = FILTER plantuml %]
   Bob -> Alice : hello
 [% END %]
 
-<img src="[% link %]" alt="[% link %]" />
+<img src="[% url %]" alt="[% url %]" />
 
 =head1 DESCRIPTION
 
@@ -45,7 +54,7 @@ It uses WWW:PlantUML remote client under the hood.
 
 =head2 init
 
-gets called by new
+defines init() method.
 
 =cut
 
@@ -58,7 +67,7 @@ sub init {
 
 =head2 filter
 
-filter subroutine
+defines filter() method.
 
 =cut
 
@@ -81,8 +90,6 @@ Rangana Sudesha Withanage, C<< <rwi at cpan.org> >>
 Please report any bugs or feature requests to C<bug-template-plugin-filter-plantuml at rt.cpan.org>, or through
 the web interface at L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Template-Plugin-Filter-PlantUML>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
 
 
 =head1 SUPPORT
