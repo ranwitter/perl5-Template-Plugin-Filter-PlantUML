@@ -13,7 +13,7 @@ use WWW::PlantUML;
 
 =head1 NAME
 
-Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encoding and processing PlantUML Diagrams using any PlantUML Server.
+Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encoding and processing PlantUML Diagrams using a PlantUML Server.
 
 =head1 VERSION
 
@@ -34,7 +34,7 @@ To use this plugin, you have to make sure that the Template Toolkit knows about 
         PLUGIN_BASE => 'Template::Plugin::Filter::PlantUML',
     });
 
-Then you b<USE> your plugin like below.
+Then you C<USE> your plugin like below.
 
     [% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' -%]
     
@@ -48,7 +48,7 @@ Then you b<USE> your plugin like below.
 
 This is a trivial Template::Toolkit plugin filter to allow any template writer to embed PlantUML Diagram Syntax in Templates and have them encoded and processed via any PlantUML Server in any supported formats.
 
-It uses WWW:PlantUML remote client under the hood.
+It uses C<WWW:PlantUML> remote client under the hood.
 
 =head1 SUBROUTINES/METHODS
 
