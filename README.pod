@@ -13,19 +13,19 @@ Version 0.01
 
 To use this plugin, you have to make sure that the Template Toolkit knows about its namespace.
 
-my $tt2 = Template->new({
-    PLUGIN_BASE => 'Template::Plugin::Filter::PlantUML',
-});
+    my $tt2 = Template->new({
+        PLUGIN_BASE => 'Template::Plugin::Filter::PlantUML',
+    });
 
 Then you b<USE> your plugin like below.
 
-[% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' -%]
-
-[% url = FILTER plantuml %]
-  Bob -> Alice : hello
-[% END %]
-
-<img src="[% url %]" alt="[% url %]" />
+    [% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' -%]
+    
+    [% url = FILTER plantuml %]
+      Bob -> Alice : hello
+    [% END %]
+    
+    <img src="[% url %]" alt="[% url %]" />
 
 =head1 DESCRIPTION
 
