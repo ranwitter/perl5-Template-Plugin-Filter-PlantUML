@@ -1,5 +1,5 @@
 ---
-abstract: 'A template toolkit plugin filter for encoding and processing PlantUML Diagrams using any PlantUML Server.'
+abstract: 'A template toolkit plugin filter for encoding and processing PlantUML Diagrams using a PlantUML Server.'
 author:
   - 'Rangana Sudesha Withanage <rwi@cpan.org>'
 build_requires:
@@ -19,6 +19,7 @@ no_index:
     - t
     - inc
 requires:
+  WWW::PlantUML: '0.01'
   perl: '5.006'
 version: 0.01
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'
