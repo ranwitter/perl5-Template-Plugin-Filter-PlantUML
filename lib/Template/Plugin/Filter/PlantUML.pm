@@ -8,7 +8,6 @@ require Template::Plugin::Filter;
 use base qw(Template::Plugin::Filter);
 use vars qw($VERSION $DYNAMIC $FILTER_NAME);
 
-use Lingua::PlantUML::Encode qw(encode_p);
 use WWW::PlantUML;
 
 =head1 NAME
