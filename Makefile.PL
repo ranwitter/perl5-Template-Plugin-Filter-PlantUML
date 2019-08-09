@@ -17,6 +17,7 @@ my %WriteMakefileArgs = (
         'Test::More' => '0',
     },
     PREREQ_PM => {
+        'Template::Plugin::Filter' => '0',
         'WWW::PlantUML'    => '0.01'
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },

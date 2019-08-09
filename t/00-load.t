@@ -10,6 +10,6 @@ BEGIN {
     use_ok('Template::Plugin::Filter::PlantUML') || print "Bail out!\n";
 }
 
-diag(
-"Testing Template::Plugin::Filter::PlantUML $Template::Plugin::Filter::PlantUML::VERSION, Perl $], $^X"
-);
+#diag(
+#"Testing Template::Plugin::Filter::PlantUML $Template::Plugin::Filter::PlantUML::VERSION, Perl $], $^X"
+#);
