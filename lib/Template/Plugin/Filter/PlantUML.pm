@@ -24,7 +24,6 @@ our $VERSION     = 0.01;
 our $DYNAMIC     = 1;
 our $FILTER_NAME = 'plantuml';
 
-
 =head1 SYNOPSIS
 
 To use this plugin, you have to make sure that the Template Toolkit knows about its namespace.
@@ -63,7 +62,6 @@ sub init {
     return $self;
 }
 
-
 =head2 filter
 
 defines filter() method.
@@ -71,13 +69,13 @@ defines filter() method.
 =cut
 
 sub filter {
-    my($self, $code, $args, $conf) = @_;
+    my ( $self, $code, $args, $conf ) = @_;
 
-    $args = $self->merge_args($args); 
+    $args = $self->merge_args($args);
     $conf = $self->merge_config($conf);
 
-    my $puml = WWW::PlantUML->new(@$args[0]);
-    return $puml->fetch_url($code, @$args[1] || 'png');
+    my $puml = WWW::PlantUML->new( @$args[0] );
+    return $puml->fetch_url( $code, @$args[1] || 'png' );
 }
 
 =head1 AUTHOR
@@ -134,4 +132,4 @@ the same terms as the Perl 5 programming language system itself.
 
 =cut
 
-1; # End of Template::Plugin::Filter::PlantUML
+1;    # End of Template::Plugin::Filter::PlantUML

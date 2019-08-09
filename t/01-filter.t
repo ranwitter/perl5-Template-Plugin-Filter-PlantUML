@@ -4,7 +4,7 @@ use strict;
 
 use Template::Test;
 
-test_expect(\*DATA, undef, {});
+test_expect( \*DATA, undef, {} );
 
 __END__
 -- test --
