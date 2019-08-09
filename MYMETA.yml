@@ -19,6 +19,7 @@ no_index:
     - t
     - inc
 requires:
+  Template::Plugin::Filter: '0'
   WWW::PlantUML: '0.01'
   perl: '5.006'
 version: 0.01
