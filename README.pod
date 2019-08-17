@@ -1,3 +1,5 @@
+=for html <a href="https://travis-ci.com/ranwitter/perl5-Template-Plugin-Filter-PlantUML"><img src="https://travis-ci.com/ranwitter/perl5-Template-Plugin-Filter-PlantUML.svg?branch=master"></a>
+
 =head1 NAME
 
 Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encoding and processing PlantUML Diagrams using a PlantUML Server.
