@@ -40,13 +40,13 @@ Finally process your template.
 
 Result
 
-    <img src="http://www.plantuml.com/plantuml/png/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
+    <img src="http://www.plantuml.com/plantuml/svg/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
 
 =head1 EXAMPLE
 
 =begin HTML
 
-<p><img src="http://www.plantuml.com/plantuml/png/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0" alt="Example" /></p>
+<p><img src="http://www.plantuml.com/plantuml/svg/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0" alt="Example" /></p>
 
 =end HTML
 
@@ -92,9 +92,9 @@ You can also look for information at:
 
 L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Template-Plugin-Filter-PlantUML>
 
-=item * AnnoCPAN: Annotated CPAN documentation
+=item * GitHub Repository
 
-L<http://annocpan.org/dist/Template-Plugin-Filter-PlantUML>
+L<https://github.com/ranwitter/perl5-Template-Plugin-Filter-PlantUML>
 
 =item * CPAN Ratings
 
@@ -108,6 +108,8 @@ L<https://metacpan.org/release/Template-Plugin-Filter-PlantUML>
 
 
 =head1 ACKNOWLEDGEMENTS
+
+Many thanks to Andy Wardley L<abw@wardley.org> | L<http://wardley.org> for his awesome <LTemplate::Plugin::Filter>
 
 
 =head1 LICENSE AND COPYRIGHT
