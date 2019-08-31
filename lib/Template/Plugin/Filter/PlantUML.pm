@@ -42,7 +42,7 @@ To use this plugin, you have to make sure that the Template Toolkit knows about 
         },
     });
 
-Then you C<USE> your plugin in a template file (foo.tt2) as follows.
+Then you C<USE> your plugin in a template file as follows.
 
     [% USE 'http://www.plantuml.com/plantuml' 'svg' -%]
     
@@ -56,7 +56,7 @@ Finally process your template.
 
     $tt2->process('foo.tt2') || die $tt2->error();
 
-Result
+Result would be:
 
     <img src="http://www.plantuml.com/plantuml/svg/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
 
@@ -147,8 +147,7 @@ L<https://metacpan.org/release/Template-Plugin-Filter-PlantUML>
 
 =head1 ACKNOWLEDGEMENTS
 
-Many thanks to Andy Wardley L<abw@wardley.org> | L<http://wardley.org> for his awesome <LTemplate::Plugin::Filter>
-
+Many thanks to Andy Wardley L<http://wardley.org> for his awesome L<Template::Plugin::Filter>
 
 =head1 LICENSE AND COPYRIGHT
 
