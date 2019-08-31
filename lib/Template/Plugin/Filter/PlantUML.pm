@@ -10,6 +10,8 @@ use vars qw($VERSION $DYNAMIC $FILTER_NAME);
 
 use WWW::PlantUML;
 
+=for html <a href="https://travis-ci.com/ranwitter/perl5-Template-Plugin-Filter-PlantUML"><img src="https://travis-ci.com/ranwitter/perl5-Template-Plugin-Filter-PlantUML.svg?branch=master"></a>&nbsp;</a><a title="Artistic-2.0" href="https://opensource.org/licenses/Artistic-2.0"><img src="https://img.shields.io/badge/License-Perl-0298c3.svg"></a>
+
 =head1 NAME
 
 Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encoding and processing PlantUML Diagrams using a PlantUML Server.
@@ -29,18 +31,42 @@ our $FILTER_NAME = 'plantuml';
 To use this plugin, you have to make sure that the Template Toolkit knows about its namespace.
 
     my $tt2 = Template->new({
-        PLUGIN_BASE => 'Template::Plugin::Filter::PlantUML',
+        PLUGIN_BASE => 'Template::Plugin::Filter',
     });
 
-Then you C<USE> your plugin like below.
+    # or
 
-    [% USE Filter.PlantUML 'http://www.plantuml.com/plantuml' 'svg' -%]
+    my $tt2 = Template->new({
+        PLUGINS => {
+           PlantUML => 'Template::Plugin::Filter::PlantUML',
+        },
+    });
+
+Then you C<USE> your plugin in a template file (foo.tt2) as follows.
+
+    [% USE 'http://www.plantuml.com/plantuml' 'svg' -%]
     
     [% url = FILTER plantuml %]
       Bob -> Alice : hello
     [% END %]
     
-    <img src="[% url %]" alt="[% url %]" />
+    <img src="[% url %]"/>
+
+Finally process your template.
+
+    $tt2->process('foo.tt2') || die $tt2->error();
+
+Result
+
+    <img src="http://www.plantuml.com/plantuml/png/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
+
+=head1 EXAMPLE
+
+=begin HTML
+
+<p><img src="http://www.plantuml.com/plantuml/png/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0" alt="Example" /></p>
+
+=end HTML
 
 =head1 DESCRIPTION
 
