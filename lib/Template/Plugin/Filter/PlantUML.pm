@@ -58,13 +58,13 @@ Finally process your template.
 
 Result would be:
 
-    <img src="http://www.plantuml.com/plantuml/svg/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
+    <img src="http://www.plantuml.com/plantuml/svg/~169NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0"/>
 
 =head1 EXAMPLE
 
 =begin HTML
 
-<p><img src="http://www.plantuml.com/plantuml/svg/69NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0" alt="Example" /></p>
+<p><img src="http://www.plantuml.com/plantuml/svg/~169NZKb1moazIqBLJSCp9J4vLi5B8ICt9oUS204a_1dy0" alt="Live Example from PlantUML.com" /></p>
 
 =end HTML
 
