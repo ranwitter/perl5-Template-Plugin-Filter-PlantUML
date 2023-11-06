@@ -18,11 +18,11 @@ Template::Plugin::Filter::PlantUML - A template toolkit plugin filter for encodi
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION     = 0.01;
+our $VERSION     = 0.02;
 our $DYNAMIC     = 1;
 our $FILTER_NAME = 'plantuml';
 
